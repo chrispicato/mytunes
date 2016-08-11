@@ -38,19 +38,18 @@ describe('SongQueue', function() {
       var songQueue = new SongQueue([songData1, songData2]);
       song2 = songQueue.at(1);
       expect(songQueue.length).to.equal(2);
-      console.log(songQueue);
       songQueue.at(0).trigger('ended');
       expect(songQueue.length).to.equal(1);
       expect(songQueue.at(0)).to.equal(song2);
     });
 
-    xit('plays the first song in the queue if there are any songs left', function() {
+    it('plays the first song in the queue if there are any songs left', function() {
       var songQueue = new SongQueue([songData1, songData2]);
       songQueue.at(0).ended();
       expect(playSpy).to.have.been.called;
     });
 
-    xit('does nothing if there are no songs left in the queue', function() {
+    it('does nothing if there are no songs left in the queue', function() {
       var songQueue = new SongQueue(songData1);
       songQueue.at(0).ended();
       expect(playSpy).to.have.not.been.called;
@@ -69,7 +68,9 @@ describe('SongQueue', function() {
 
   describe('playFirst', function() {
     it('plays the first song in the queue', function() {
+       console.log("here");
       sinon.spy(SongModel.prototype, 'play');
+      console.log("here");
       var songQueue = new SongQueue(songData1);
       songQueue.playFirst();
       expect(songQueue.at(0).play).to.have.been.called;
