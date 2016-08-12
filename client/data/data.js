@@ -22,17 +22,4 @@ var songData = [
   // }
 ];
 
-$.ajax({  
-  url:'https://api.parse.com/1/classes/songs',
-  type: 'GET',
-  success: function (data) {
-    window.songData = songData.concat(data.results);
 
-
-
-  },
-  data:JSON.stringify({}),
-  error: function(){
-    console.log("Failed");    
-  }
-});
