@@ -49,7 +49,7 @@ describe('LibraryView', function() {
       xhr.restore();
     });
 
-    xit('should re-render with fetched songs', function() {
+    it('should re-render with fetched songs', function() {
       var FakeLibraryView = LibraryView.extend({ render: sinon.spy() });
       view = new FakeLibraryView({ collection: new Songs() });
       expect(view.render).to.have.been.calledOnce;
