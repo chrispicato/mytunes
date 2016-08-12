@@ -68,9 +68,7 @@ describe('SongQueue', function() {
 
   describe('playFirst', function() {
     it('plays the first song in the queue', function() {
-       console.log("here");
       sinon.spy(SongModel.prototype, 'play');
-      console.log("here");
       var songQueue = new SongQueue(songData1);
       songQueue.playFirst();
       expect(songQueue.at(0).play).to.have.been.called;
