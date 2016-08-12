@@ -12,7 +12,7 @@ var AppView = Backbone.View.extend({
     }, this);
 
     this.model.on('enqueue',function(appmodel){
-      console.log(this.queueView);
+     // console.log("here");
       this.queueView.render();
     },this);
 
