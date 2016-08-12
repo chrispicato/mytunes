@@ -21,5 +21,3 @@ var songData = [
   //   artist: 'Aaliyah',
   // }
 ];
-
-
