@@ -11,6 +11,11 @@ var AppView = Backbone.View.extend({
       this.playerView.setSong(model.get('currentSong'));
     }, this);
 
+    this.model.on('enqueue',function(appmodel){
+      console.log(this.queueView);
+      this.queueView.render();
+    },this);
+
     var endcurrent = function() {
       //console.log(this.model.get('currentSong'), "example");
       this.model.get('currentSong').trigger('ended', this);
