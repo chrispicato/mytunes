@@ -10,9 +10,10 @@ var SongQueue = Backbone.Collection.extend({
     });
 
     this.on('dequeue',function(song){
-      //debugger;
+    //  console.log(song);  
       this.remove(song);
-    });
+      //console.log(this);
+    },this);
 
     this.on('ended',function(song){
       this.models[0].dequeue();
